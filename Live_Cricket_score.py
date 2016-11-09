@@ -13,6 +13,8 @@ def view_score():
 
     soup = BeautifulSoup(cric_html, 'html.parser')
 
+    print soup
+
     a = soup.find_all('div', attrs={'class': 'innings-info-1'})
     b = soup.find_all('div', attrs={'class': 'innings-info-1'})
     c = soup.find_all('div', attrs={'class': 'match-status'})
