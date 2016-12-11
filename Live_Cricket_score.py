@@ -16,7 +16,7 @@ def view_score():
     #print soup
 
     a = soup.find_all('div', attrs={'class': 'innings-info-1'})
-    b = soup.find_all('div', attrs={'class': 'innings-info-1'})
+    b = soup.find_all('div', attrs={'class': 'innings-info-2'})
     c = soup.find_all('div', attrs={'class': 'match-status'})
 
     output1 = []
