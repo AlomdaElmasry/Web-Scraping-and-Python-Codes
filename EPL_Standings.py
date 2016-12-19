@@ -11,7 +11,7 @@ def getTable():
 
     soup = BeautifulSoup(contest_html, 'html.parser')
 
-    row = soup.find_all("tr", attrs={'class' : 'standings-row'})
+    row = soup.find_all("tr", attrs={'class': 'standings-row'})
 
     table = []
 
