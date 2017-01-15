@@ -19,9 +19,16 @@ def getData():
         for j in i.find_all('span'):
             data.append(j.text)
 
-    print "\nYour monthly high-speed data limit is : " + str(data[0])
-    print "You are left with : " + str(data[1])
-    print "No. of days left in the current bill cycle : " + str(data[2])
-    print "DSL Number : " + str(data[3])
+    if(len(data) == 4):
+        print "\nYour monthly high-speed data limit is : " + str(data[0])
+        print "You are left with : " + str(data[1])
+        print "No. of days left in the current bill cycle : " + str(data[2])
+        print "DSL Number : " + str(data[3])
+
+    elif(len(data) == 5):
+        print "\nYour monthly high-speed data limit is : " + str(data[0] + " + " + data[1])
+        print "You are left with : " + str(data[2])
+        print "No. of days left in the current bill cycle : " + str(data[3])
+        print "DSL Number : " + str(data[4])
 
 getData()
