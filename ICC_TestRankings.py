@@ -21,6 +21,7 @@ def getRanking():
                 row.append(td.get_text().encode("utf-8"))
             if len(row) == 4:
                 data.append(row)
+    print data
 
     Team = []
     for i in range(0,10):
@@ -48,6 +49,5 @@ def getRanking():
     df["Points"] = Points
     df["Rating"] = Rating
 
-    print df
 
 getRanking()
