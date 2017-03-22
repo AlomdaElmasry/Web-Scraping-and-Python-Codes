@@ -1,9 +1,9 @@
 import twitter
 
-c_key = 'DYvKN0FoGBtMbx75ySGyY2daZ'
-c_secret = 'AHnVMyqslbfzCtz3PMBAXQ1u6SeHg5vpy95oXwArZb00L4F1n4'
-a_key = '2974062416-KAziUgk5jpzmQveUt1rjdNHu1tmu1Lb4b9VLvsX'
-a_secret = 'mfiIqHfz1OL6H7dsoucuRDr2Xhxi3SEsOLYkYdsy7FUzA'
+c_key = "Consumer Key"
+c_secret = "Consumer Secret Key"
+a_key = "Access Key"
+a_secret = "Access Secret Key"
 
 
 def get_tweets(user_id):
