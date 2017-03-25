@@ -8,7 +8,12 @@ def getlyrics():
     song = song.lower()
     url = "http://www.azlyrics.com/lyrics/" + artist + "/" + song + ".html"
 
-    lyrics_file = urllib2.urlopen(url)
+    # add header
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36'}
+
+    request = urllib2.Request(url, headers = headers)
+    lyrics_file = urllib2.urlopen(request)
     lyrics_html = lyrics_file.read()
     lyrics_file.close()
 
