@@ -91,6 +91,7 @@ def play_song():
     h3 = soup.find("h3", attrs={"class": "yt-lockup-title"})
     link = h3.find('a')['href']
     video_url = "https://www.youtube.com" + link
+    print video_url
     os.system("vlc " + video_url)
 
 
