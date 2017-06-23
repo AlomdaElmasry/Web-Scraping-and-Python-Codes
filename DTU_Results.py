@@ -11,25 +11,35 @@ def get_Results():
 
     soup = BeautifulSoup(result_html, "html.parser")
 
-    li = []
+    li_text = []
+    li_link = []
 
     for a in soup.find_all("a"):
-        li.append(a.text)
+        li_text.append(a.text)
 
-    li = map(lambda s: s.strip(), li)
+    for table in soup.find_all("table", attrs= {"id" : "AutoNumber1"}):
+        for tr in table.find_all("tr"):
+            for a in tr.find_all("a"):
+                li_link.append("http://exam.dtu.ac.in/" + a['href'])
 
-    final_li = []
+    li = map(lambda s: s.strip(), li_text)
+
+    final_li_text = []
 
     for i in range(12, len(li)):
-        final_li.append(li[i])
+        final_li_text.append(li_text[i])
 
-    del final_li[len(final_li) - 1]
+    del final_li_text[len(final_li_text) - 1]
 
     print "\n"
 
-    for i in final_li:
-        print "-->  " + str(i)
+    #for i in final_li:
+    #    print "-->  " + str(i)
 
+    del li_link[0]
+
+    for i in range(0, 50):
+         print final_li_text[i] + "     --     " + li_link[i]
 
 if __name__ == "__main__":
     get_Results()
