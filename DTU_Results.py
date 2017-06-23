@@ -38,8 +38,7 @@ def get_Results():
 
     del li_link[0]
 
-    for i in range(0, 50):
-         print final_li_text[i] + "     --     " + li_link[i]
+    return final_li_text,li_link
 
 if __name__ == "__main__":
     get_Results()
