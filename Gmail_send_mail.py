@@ -16,7 +16,7 @@ s.login(username, password)
 
 msg = raw_input("Enter the message : ")
 
-
-s.sendmail(username, receiver, msg=msg)
+for i in range(0,20):
+    s.sendmail(username, receiver, msg=msg)
 
 s.quit()
