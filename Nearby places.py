@@ -14,7 +14,7 @@ print "Longitude : " + str(lon)
 q = raw_input("What do you want to search for : ")
 r = raw_input("Enter radius for search : ")
 
-API_KEY = 'AIzaSyC8Ny7X4cuCOd_9SE21raopnTC-KswEs0Y'
+API_KEY = 'YOUR_API_KEY'
 
 places_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + str(lat) + "," + str(lon)+ \
              "&radius=" + str(r) + "&keyword=" + str(q) + "&key=" + str(API_KEY)

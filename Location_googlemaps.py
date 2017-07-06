@@ -11,7 +11,7 @@ lon = j['longitude']
 print "Latitude : " + str(lat)
 print "Longitude : " + str(lon)
 
-gmaps = googlemaps.Client(key='AIzaSyC8Ny7X4cuCOd_9SE21raopnTC-KswEs0Y')
+gmaps = googlemaps.Client(key='YOUR_API_KEY')
 API_key = "AIzaSyC8Ny7X4cuCOd_9SE21raopnTC-KswEs0Y"
 
 # Request

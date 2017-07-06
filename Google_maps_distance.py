@@ -1,7 +1,7 @@
 import requests
 import json
 
-API_KEY = "AIzaSyC8Ny7X4cuCOd_9SE21raopnTC-KswEs0Y"
+API_KEY = "YOUR_API_KEY"
 
 li = {"origins" : "Delhi", "destinations" : "Mumbai", "mode" : "driving", "key" : API_KEY}
 
