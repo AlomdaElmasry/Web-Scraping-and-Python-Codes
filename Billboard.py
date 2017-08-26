@@ -3,7 +3,9 @@ from bs4 import BeautifulSoup
 import urllib2
 import pandas as pd
 
+
 def topSongs():
+
     url = "http://www.billboard.com/charts/hot-100"
     songs_file = urllib2.urlopen(url)
     songs_html = songs_file.read()
@@ -11,33 +13,22 @@ def topSongs():
 
     soup = BeautifulSoup(songs_html, 'html.parser')
 
+    # Forming the structure for the song details
     title = soup.find_all('div', attrs={'class' : 'chart-row__title'})
 
-    rank = []
     song = []
     artist = []
 
-    for i in range(1,101):
-        rank.append(i)
+    # Getting the name of the song
+    for h2 in soup.find_all('h2', attrs={'class' : 'chart-row__song'}):
+        song.append(h2.text)
 
-    for i in title:
-        head = i.find("h2")
-        song.append(head.text)
+    # Getting the name of the artist
+    for span in soup.find_all('span', attrs={'class' : 'chart-row__artist'}):
+        artist.append(span.text)
 
-    # for i in title:
-    #     for anchor in i.find_all("a"):
-    #         artist.append(anchor.text)
-
-    # print rank
-    # print song
-
-    # artist = map(lambda s: s.strip(), artist)
-
-    df = pd.DataFrame(columns={"Rank", "Song"})
-    df["Rank"] = rank
-    df["Song"] = song
-
-    print df
+    print song
+    print artist
 
 
 topSongs()
