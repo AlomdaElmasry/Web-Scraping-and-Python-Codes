@@ -12,7 +12,7 @@ print "Latitude : " + str(lat)
 print "Longitude : " + str(lon)
 
 gmaps = googlemaps.Client(key='YOUR_API_KEY')
-API_key = "AIzaSyC8Ny7X4cuCOd_9SE21raopnTC-KswEs0Y"
+API_key = "your API Key"
 
 # Request
 url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + str(lat) + "," + str(lon) + "&key=" + str(API_key)

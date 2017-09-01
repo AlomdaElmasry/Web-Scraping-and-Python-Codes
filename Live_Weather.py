@@ -4,7 +4,7 @@ from pprint import pprint
 def view_weather() :
 
     x = raw_input("Enter the Place : ")
-    url = 'http://api.openweathermap.org/data/2.5/weather?q=' + x + '&APPID=a4c44b228e720ea728b757f3aa754c06'
+    url = 'http://api.openweathermap.org/data/2.5/weather?q=' + x + '&APPID=' + 'your APPID'
 
     r = requests.get(url)
     data_json = r.json()
