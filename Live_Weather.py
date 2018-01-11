@@ -1,6 +1,7 @@
 import requests
 from pprint import pprint
 
+
 def view_weather() :
 
     x = raw_input("Enter the Place : ")

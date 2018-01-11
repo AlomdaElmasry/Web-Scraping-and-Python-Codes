@@ -61,24 +61,23 @@ def main():
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('drive', 'v3', http=http)
 
-    results = service.files().list(
-        pageSize=10,fields="nextPageToken, files(id, name)").execute()
-    items = results.get('files', [])
-    if not items:
-        print('No files found.')
-    else:
-        print('Files:')
-        for item in items:
-            print('{0} ({1})'.format(item['name'], item['id']))
+    # results = service.files().list(
+    #     pageSize=10,fields="nextPageToken, files(id, name)").execute()
+    # items = results.get('files', [])
+    # if not items:
+    #     print('No files found.')
+    # else:
+    #     print('Files:')
+    #     for item in items:
+    #         print('{0} ({1})'.format(item['name'], item['id']))
 
-    file = "716.jpeg"
+    file = "links.txt"
     metadata = {'title': file}
 
-    media_body = MediaFileUpload(file, mimetype="image/jpeg", resumable=True)
+    media_body = MediaFileUpload(file, resumable=True)
     body = {
-        'title': file,
-        'description': "Random Test",
-        'mimeType': "image/jpeg"
+        'title': "Test File",
+        'description': "Random Test"
     }
 
     try:
@@ -86,6 +85,7 @@ def main():
             body=body,
             media_body=media_body).execute()
         return file
+    
     except Exception as e:
         print (e)
 
